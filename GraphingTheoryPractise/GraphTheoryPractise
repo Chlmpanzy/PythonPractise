@@ -1,0 +1,29 @@
+from collections import namedtuple
+#Normal Graphs
+Graph = namedtuple("Graph", ["nodes", "edges"])
+
+nodes = ["A", "B", "C", "D"]
+edges = [
+    ("A", "B"),
+    ("A", "B"),
+    ("A", "C"),
+    ("A", "C"),
+    ("A", "D"),
+    ("B", "D"), 
+    ("C", "D") 
+]
+G = Graph(nodes, edges)
+
+#Adjancency lists
+
+def adjancencyDict(graph):
+    """
+    Return adjancecny list of a graph
+    """
+    adj = {node: [] for node in graph.nodes}
+    for edge in graph.edges:
+        node1, node2 = edge[0], edge[1]
+        adj[node1].append(node2)
+        adj[node2].append(node1)
+    return adj
+
