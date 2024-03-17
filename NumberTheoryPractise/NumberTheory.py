@@ -29,3 +29,36 @@ def divisors2(n):
 
 print(*divisors2(int(input(""))))
 
+
+#Check for Prime
+
+def checkPrime(n): #O(1) or [5, root(n)]
+    if n == (0 or 1):
+        return False
+    if n ==(2 or 3):
+        return True
+    if n%(2 or 3) == 0:
+        return False
+    for i in range(5,int(math.sqrt(n))+1):
+        if n%(i or (i+2)) == 0:
+            return False
+    return True
+
+print(checkPrime(19))
+
+#Seive Theorem
+
+def primeList(n): #n*log(log(n))
+    primes = [True]*(n+1)
+    primes[0] = False
+    primes[1] = False
+    for p in range(2,int(math.sqrt(n))+1):
+        if primes[p] == True:
+            for i in range(p*p,n+1,p):
+                primes[i] = False
+
+    for i in range(0,len(primes)):
+        if primes[i] == True:
+            print(i, end=' ')
+
+print(primeList(50))
