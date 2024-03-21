@@ -60,4 +60,8 @@ def primeList(n): #n*log(log(n))
         if primes[i] == True:
             print(i, end=' ')
 
+<<<<<<< HEAD
 print(primeList(50))
+=======
+print(primeList(50))
+>>>>>>> a0a23b8687e0f266f957ac9c1bd807b7e1846c20
